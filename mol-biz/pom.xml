@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>mol-biz</artifactId>
+  <parent>
+    <artifactId>mol</artifactId>
+    <groupId>com.xjd.mol</groupId>
+    <version>1.0.0</version>
+    <relativePath>..</relativePath>
+  </parent>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.xjd.mol</groupId>
+      <artifactId>mol-util</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.xjd.mol</groupId>
+      <artifactId>mol-dao</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.xjd.mol</groupId>
+      <artifactId>mol-itg</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+</project>
