@@ -15,13 +15,14 @@
 			<!-- <property name="suppressDate" value="true" /> -->
 		</commentGenerator>
 
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/mol" userId="root" password="root" />
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/mol"
+			userId="root" password="root" />
 
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 
-		<javaModelGenerator targetPackage="com.xjd.mol.dao.do.auto" targetProject="MAVEN">
+		<javaModelGenerator targetPackage="com.xjd.mol.dao.domain.auto" targetProject="MAVEN">
 			<property name="enableSubPackages" value="true" />
 			<property name="constructorBased" value="false" />
 			<!-- <property name="rootClass" value="com.xjd.note.dao.model.custom.BaseDo"/> -->
@@ -35,13 +36,26 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
-		<table tableName="tbl_calendar" domainObjectName="CalendarDo" >
-			<!-- <generatedKey column="id" sqlStatement="MySql" identity="true" /> -->
-			<columnOverride column="week_day" javaType="int"></columnOverride>
-			<columnOverride column="is_need_work" javaType="boolean"></columnOverride>
+		<table tableName="tbl_calendar" domainObjectName="CalendarDo">
+			<columnOverride column="week_day" javaType="java.lang.Integer" />
+			<columnOverride column="is_need_work" javaType="java.lang.Boolean" />
 		</table>
+		<!-- <table tableName="tbl_his_today" domainObjectName="HisTodayDo">
+			<generatedKey column="evt_id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table tableName="tbl_moment" domainObjectName="MomentDo">
+			<generatedKey column="mnt_id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table tableName="tbl_moment_user" domainObjectName="MomentUserDo">
+		</table>
+		<table tableName="tbl_resource" domainObjectName="ResourceDo">
+			<generatedKey column="mnt_id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table tableName="tbl_user" domainObjectName="UserDo">
+			<generatedKey column="user_id" sqlStatement="MySql" identity="true" />
+		</table> -->
 
-		
+
 	</context>
 
 </generatorConfiguration>

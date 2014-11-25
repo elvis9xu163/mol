@@ -57,6 +57,9 @@ public class AppContext {
 	}
 
 	public static boolean isEnvProduct() {
+		if (isEnvProduct == null) {
+			String envStr = getProperty("env")
+		}
 		return isEnvProduct;
 	}
 }
