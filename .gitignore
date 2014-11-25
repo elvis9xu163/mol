@@ -219,3 +219,6 @@ target
 
 #myeclipse
 .mymetadata
+
+#MANIFEST.MF
+MANIFEST.MF
