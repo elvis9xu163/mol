@@ -1,9 +1,7 @@
 package com.xjd.mol.util.enums;
 
 /**
- * <pre>
  * 布尔枚举
- * </pre>
  * 
  * @author elvis.xu
  * @since 2014-9-18

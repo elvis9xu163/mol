@@ -3,14 +3,18 @@ package com.xjd.mol.biz.context;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.xjd.mol.util.constants.RespCode;
-import com.xjd.mol.util.exception.BusinessException;
-
+/**
+ * 请求上下文
+ * 
+ * @author elvis.xu
+ * @since 2014-12-1
+ */
 public class RequestContext {
 
-	public static final String USER = "user";
-	public static final String SERVICE = "service";
-	public static final String CLIENT_IP = "clientIp";
+	private static final String KEY_CLIENT_IP = "context.request.client.ip";
+	private static final String KEY_SERVICE_CLASS = "context.request.service.class";
+	private static final String KEY_SERVICE_METHOD = "context.request.service.method";
+	private static final String KEY_USER = "context.request.user";
 
 	protected static ThreadLocal<Map<String, Object>> requestThreadLocal = new ThreadLocal<Map<String, Object>>();
 
@@ -26,35 +30,48 @@ public class RequestContext {
 		return map;
 	}
 
-	public static void setUser(User user) {
-		get().put(USER, user);
+	public static void put(String key, Object val) {
+		get().put(key, val);
 	}
 
-	public static User getUser() {
-		return (User) get().get(USER);
+	public static Object get(String key) {
+		return get().get(key);
 	}
 
-	public static User checkAndGetUser() {
-		User user = getUser();
-		if (user == null) {
-			throw new BusinessException(RespCode.RESP_0057);
-		}
-		return user;
+	public static String getAsString(String key) {
+		return (String) get().get(key);
 	}
 
-	public static void setService(HydraService service) {
-		get().put(SERVICE, service);
+	public static void putUser(Object userObj) {
+		put(KEY_USER, userObj);
 	}
 
-	public static HydraService getService() {
-		return (HydraService) get().get(SERVICE);
+	public static Object getUser() {
+		return get(KEY_USER);
 	}
 
-	public static void setClientIp(String ip) {
-		get().put(CLIENT_IP, ip);
+	public static void putClientIp(String clientIp) {
+		put(KEY_CLIENT_IP, clientIp);
 	}
 
 	public static String getClientIp() {
-		return (String) get().get(CLIENT_IP);
+		return getAsString(KEY_CLIENT_IP);
 	}
+
+	public static void putServiceClass(String clazz) {
+		put(KEY_SERVICE_CLASS, clazz);
+	}
+
+	public static String getServiceClass() {
+		return getAsString(KEY_SERVICE_CLASS);
+	}
+
+	public static void putServiceMethod(String method) {
+		put(KEY_SERVICE_METHOD, method);
+	}
+
+	public static String getServiceMethod() {
+		return getAsString(KEY_SERVICE_METHOD);
+	}
+
 }

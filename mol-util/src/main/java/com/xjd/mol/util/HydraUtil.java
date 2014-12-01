@@ -2,8 +2,6 @@ package com.xjd.mol.util;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.xjd.mol.biz.context.AppContext;
-
 public abstract class HydraUtil {
 
 	/**
@@ -15,9 +13,9 @@ public abstract class HydraUtil {
 	 * @return
 	 */
 	public static boolean isPwdField(String name) {
-		if (!AppContext.isEnvProduct()) { // 非生产环境打印密码
-			return false;
-		}
+//		if (!AppContext.isEnvProduct()) { // 非生产环境打印密码
+//			return false;
+//		}
 		
 		name = StringUtils.trimToNull(name);
 

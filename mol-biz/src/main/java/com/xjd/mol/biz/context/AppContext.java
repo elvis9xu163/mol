@@ -3,43 +3,60 @@ package com.xjd.mol.biz.context;
 import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
 
 /**
- * <pre>
  * 应用上下文
- * 只能使用静态方法
- * </pre>
  * 
  * @author elvis.xu
- * @since 2014-9-16
+ * @since 2014-12-1
  */
-
+@Component
 public class AppContext {
+	private static Logger log = LoggerFactory.getLogger(AppContext.class);
 
-	protected static ApplicationContext springContext;
-	protected static Properties properties;
-	protected static Boolean isEnvProduct;
+	public static final String VAL_ENV_PRODUCT = "product";
+	public static final String KEY_ENV = "context.app.env";
 
-	public static void setSpringContext(ApplicationContext springContext) {
-		AppContext.springContext = springContext;
+	protected static AppContext instance;
+
+	protected ApplicationContext springContext;
+	protected Properties properties;
+	protected boolean isEnvProduct;
+
+	@Autowired
+	public AppContext(ApplicationContext springContext, Properties properties) {
+		if (instance == null) {
+			this.springContext = springContext;
+			this.properties = properties;
+			if (this.properties != null) {
+				isEnvProduct = VAL_ENV_PRODUCT.equalsIgnoreCase(KEY_ENV);
+			}
+			log.info("AppContext inited: isEnvProduct=[{}], properties.size=[{}], springContext=[{}]", isEnvProduct, this.properties.size(),
+					this.springContext);
+		}
+	}
+
+	public static boolean isEnvProduct() {
+		return isEnvProduct();
 	}
 
 	public static ApplicationContext getSpringContext() {
-		return springContext;
-	}
-
-	public static void setProperties(Properties properties) {
-		AppContext.properties = properties;
+		return instance == null ? null : instance.springContext;
 	}
 
 	public static Properties getProperties() {
-		return properties;
+		return instance == null ? null : instance.properties;
 	}
 
 	public static String getProperty(String key) {
-		if (properties != null) {
-			return properties.getProperty(key);
+		Properties props = getProperties();
+		if (props != null) {
+			return props.getProperty(key);
 		}
 		return null;
 	}
@@ -56,10 +73,4 @@ public class AppContext {
 		}
 	}
 
-	public static boolean isEnvProduct() {
-		if (isEnvProduct == null) {
-			String envStr = getProperty("env")
-		}
-		return isEnvProduct;
-	}
 }

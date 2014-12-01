@@ -18,4 +18,5 @@
   <context:annotation-config />
 
   <aop:aspectj-autoproxy />
+
 </beans>
