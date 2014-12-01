@@ -11,7 +11,13 @@ public class EnumUtilTest {
 	@Test
 	public void testValid() {
 		assertThat(EnumUtil.valid(BoolEnum.class, "1")).isTrue();
-		assertThat(catchException(EnumUtil.valid(BoolEnum.class, 1)), instanceOf);
+		Throwable t = null;
+		try {
+			EnumUtil.valid(BoolEnum.class, 1);
+		} catch (Exception e) {
+			t = e;
+		}
+		assertThat(t).hasMessageStartingWith("No valid method");
 	}
 
 }
