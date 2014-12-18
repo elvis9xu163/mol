@@ -72,7 +72,7 @@
 
     <dependency>
       <groupId>com.xjd.mol</groupId>
-      <artifactId>mol-util</artifactId>
+      <artifactId>mol-utl</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>

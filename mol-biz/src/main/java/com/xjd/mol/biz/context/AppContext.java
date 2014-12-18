@@ -20,7 +20,7 @@ public class AppContext {
 	private static Logger log = LoggerFactory.getLogger(AppContext.class);
 
 	public static final String VAL_ENV_PRODUCT = "product";
-	public static final String KEY_ENV = "context.app.env";
+	public static final String KEY_ENV = AppContext.class.getName() + ".env";
 
 	protected static AppContext instance;
 
@@ -34,7 +34,7 @@ public class AppContext {
 			this.springContext = springContext;
 			this.properties = properties;
 			if (this.properties != null) {
-				isEnvProduct = VAL_ENV_PRODUCT.equalsIgnoreCase(KEY_ENV);
+				isEnvProduct = VAL_ENV_PRODUCT.equalsIgnoreCase(this.properties.getProperty(KEY_ENV));
 			}
 			log.info("AppContext inited: isEnvProduct=[{}], properties.size=[{}], springContext=[{}]", isEnvProduct, this.properties.size(),
 					this.springContext);

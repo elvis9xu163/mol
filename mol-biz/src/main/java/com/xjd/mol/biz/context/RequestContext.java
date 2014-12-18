@@ -11,10 +11,10 @@ import java.util.Map;
  */
 public class RequestContext {
 
-	private static final String KEY_CLIENT_IP = "context.request.client.ip";
-	private static final String KEY_SERVICE_CLASS = "context.request.service.class";
-	private static final String KEY_SERVICE_METHOD = "context.request.service.method";
-	private static final String KEY_USER = "context.request.user";
+	private static final String KEY_CLIENT_IP = RequestContext.class.getName() + ".client.ip";
+	private static final String KEY_SERVICE_CLASS = RequestContext.class.getName() + ".service.class";
+	private static final String KEY_SERVICE_METHOD = RequestContext.class.getName() + ".service.method";
+	private static final String KEY_USER = RequestContext.class.getName() + ".user";
 
 	protected static ThreadLocal<Map<String, Object>> requestThreadLocal = new ThreadLocal<Map<String, Object>>();
 
