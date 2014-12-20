@@ -15,7 +15,7 @@
     <property name="fileEncoding" value="UTF-8" />
     <property name="locations">
       <array>
-        <value>classpath:props/resp-code.properties</value>
+        <value>classpath:props/respCode.properties</value>
       </array>
     </property>
   </bean>

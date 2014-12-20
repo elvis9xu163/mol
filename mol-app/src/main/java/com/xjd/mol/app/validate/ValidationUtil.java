@@ -17,7 +17,7 @@ import org.apache.commons.collections.MapUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.xjd.mol.app.respcode.RespCode;
+import com.xjd.mol.util.constants.RespCode;
 import com.xjd.mol.util.exception.BusinessException;
 
 public abstract class ValidationUtil implements ValidationProperties {

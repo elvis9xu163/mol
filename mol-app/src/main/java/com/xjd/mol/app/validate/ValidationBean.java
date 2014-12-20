@@ -4,9 +4,9 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import com.xjd.mol.app.respcode.RespCode;
 import com.xjd.mol.app.validate.constraints.Date;
 import com.xjd.mol.app.validate.constraints.Date.DatePattern;
+import com.xjd.mol.util.constants.RespCode;
 
 public class ValidationBean {
 

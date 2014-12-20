@@ -1,4 +1,4 @@
-package com.xjd.mol.app.respcode;
+package com.xjd.mol.util.constants;
 
 /**
  * <pre>
