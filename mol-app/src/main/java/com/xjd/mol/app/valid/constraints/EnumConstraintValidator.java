@@ -1,4 +1,4 @@
-package com.xjd.mol.app.validate.constraints;
+package com.xjd.mol.app.valid.constraints;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

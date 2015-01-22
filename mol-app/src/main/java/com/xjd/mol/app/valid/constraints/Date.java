@@ -1,4 +1,4 @@
-package com.xjd.mol.app.validate.constraints;
+package com.xjd.mol.app.valid.constraints;
 
 import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
 import static java.lang.annotation.ElementType.CONSTRUCTOR;

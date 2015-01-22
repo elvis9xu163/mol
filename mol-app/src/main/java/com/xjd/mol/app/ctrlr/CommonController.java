@@ -1,4 +1,4 @@
-package com.xjd.mol.app.controller;
+package com.xjd.mol.app.ctrlr;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

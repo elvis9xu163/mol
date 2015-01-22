@@ -1,4 +1,4 @@
-package com.xjd.mol.app.component;
+package com.xjd.mol.app.cmpnt;
 
 import org.springframework.core.convert.converter.Converter;
 

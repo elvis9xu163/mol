@@ -1,11 +1,11 @@
-package com.xjd.mol.app.validate;
+package com.xjd.mol.app.valid;
 
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import com.xjd.mol.app.validate.constraints.Date;
-import com.xjd.mol.app.validate.constraints.Date.DatePattern;
+import com.xjd.mol.app.valid.constraints.Date;
+import com.xjd.mol.app.valid.constraints.Date.DatePattern;
 import com.xjd.mol.util.constants.RespCode;
 
 public class ValidationBean {

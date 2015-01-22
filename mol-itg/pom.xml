@@ -12,6 +12,7 @@
   </parent>
 
   <dependencies>
+    <!-- ===model=== -->
     <dependency>
       <groupId>com.xjd.mol</groupId>
       <artifactId>mol-utl</artifactId>

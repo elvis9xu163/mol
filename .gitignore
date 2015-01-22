@@ -222,3 +222,7 @@ target
 
 #MANIFEST.MF
 MANIFEST.MF
+
+# IntelliJ
+.idea
+*.iml

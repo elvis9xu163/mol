@@ -1,4 +1,4 @@
-package com.xjd.mol.app.validate;
+package com.xjd.mol.app.valid;
 
 import java.lang.reflect.Method;
 import java.util.Collections;

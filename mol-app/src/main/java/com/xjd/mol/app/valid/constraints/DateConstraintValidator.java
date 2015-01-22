@@ -1,11 +1,11 @@
-package com.xjd.mol.app.validate.constraints;
+package com.xjd.mol.app.valid.constraints;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.xjd.mol.app.validate.constraints.Date.DatePattern;
+import com.xjd.mol.app.valid.constraints.Date.DatePattern;
 import com.xjd.mol.util.DateUtil;
 
 
